@@ -1,7 +1,29 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
 describe "Ryba" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+  describe "Name" do
+    before :all do
+      @name = Ryba::Name
+    end
+
+    it "should work for male" do
+      @name.first_name(true)
+      @name.middle_name(true)
+      @name.family_name(true)
+    end
+    
+    it "should work for female" do
+      @name.first_name(false)
+      @name.middle_name(false)
+      @name.family_name(false)
+    end
+
+    it "should work with random gender" do
+      @name.gender do |gender|
+        @name.first_name(gender)
+        @name.middle_name(gender)
+        @name.family_name(gender)
+      end
+    end
   end
 end
