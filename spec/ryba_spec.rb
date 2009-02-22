@@ -10,12 +10,14 @@ describe "Ryba" do
       @name.first_name(true)
       @name.middle_name(true)
       @name.family_name(true)
+      @name.full_name(true)
     end
     
     it "should work for female" do
       @name.first_name(false)
       @name.middle_name(false)
       @name.family_name(false)
+      @name.full_name(false)
     end
 
     it "should work with random gender" do
@@ -23,6 +25,7 @@ describe "Ryba" do
         @name.first_name(gender)
         @name.middle_name(gender)
         @name.family_name(gender)
+        @name.full_name(gender)
       end
     end
   end

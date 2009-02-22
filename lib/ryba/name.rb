@@ -27,6 +27,12 @@ module Ryba
         end
       end
 
+      def full_name(male = nil)
+        male = gender if male.nil?
+
+        "#{family_name(male)} #{first_name(male)} #{middle_name(male)}"
+      end
+
       private
 
       def pick_with_gender(male, male_ary, female_ary)
