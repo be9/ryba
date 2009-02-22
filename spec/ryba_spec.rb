@@ -26,4 +26,16 @@ describe "Ryba" do
       end
     end
   end
+
+  describe "PhoneNumber" do
+    before :all do
+      @pn = Ryba::PhoneNumber
+    end
+
+    it "should work" do
+      20.times do
+        @pn.phone_number.should match(/\d/)
+      end
+    end
+  end
 end

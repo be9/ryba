@@ -20,6 +20,7 @@ Ryba — попытка создать аналогичный генератор
 
 Библиотека находится в активной разработке. На данный момент реализованы:
 * Генерация имен.
+* Генерация телефонов.
 
 Ниже описан интерфейс для реализованных возможностей.
 
@@ -53,6 +54,23 @@ h2. Генерация имен
     family_name = Ryba::Name.family_name(gender)
   end
 </pre></code>
+
+h2. Генерация телефонов
+
+Метод @Ryba::PhoneNumber.phone_number@.
+
+<pre><code>
+  >> Ryba::PhoneNumber.phone_number
+  => "2-26-47"
+  >> Ryba::PhoneNumber.phone_number
+  => "431-15-94"
+  >> Ryba::PhoneNumber.phone_number
+  => "8 (87829) 9-45-53"
+  >> Ryba::PhoneNumber.phone_number
+  => "5515328"
+  >> Ryba::PhoneNumber.phone_number
+  => "(2397) 94 78 14"
+</code></pre>
 
 h2. Лицензия
 

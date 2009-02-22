@@ -8,17 +8,17 @@ module Ryba
       end
 
       def first_name(male = nil)
-        pick(male, Ryba::Data::MaleNames, Ryba::Data::FemaleNames)
+        pick_with_gender(male, Ryba::Data::MaleNames, Ryba::Data::FemaleNames)
       end
       
       def middle_name(male = nil)
-        pick(male, Ryba::Data::MaleMiddleNames, Ryba::Data::FemaleMiddleNames)
+        pick_with_gender(male, Ryba::Data::MaleMiddleNames, Ryba::Data::FemaleMiddleNames)
       end
 
       def family_name(male = nil)
         male = gender if male.nil?
 
-        famname = pick_element(Ryba::Data::FamilyNames)
+        famname = Ryba.pick(Ryba::Data::FamilyNames)
 
         if famname.is_a? Array
           famname[0] + famname[male ? 1 : 2]
@@ -29,13 +29,9 @@ module Ryba
 
       private
 
-      def pick(male, male_ary, female_ary)
+      def pick_with_gender(male, male_ary, female_ary)
         male = gender if male.nil?
-        pick_element(male ? male_ary : female_ary)
-      end
-
-      def pick_element(ary)
-        ary[rand(ary.size)]
+        Ryba.pick(male ? male_ary : female_ary)
       end
     end
   end
