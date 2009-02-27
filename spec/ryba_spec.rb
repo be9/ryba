@@ -41,4 +41,26 @@ describe "Ryba" do
       end
     end
   end
+
+  describe "Address" do
+    before :all do
+      @adr = Ryba::Address
+    end
+
+    it "#index should be integer" do
+      20.times do
+        @adr.index.should be_kind_of(Integer)
+      end
+    end
+
+    [:city, :full_city, :street, :address, :postal].each do |meth|
+      it "##{meth} should return not empty string" do
+        20.times do
+          str = @adr.send(meth)
+          str.should be_kind_of(String)
+          str.should_not be_empty
+        end
+      end
+    end
+  end
 end

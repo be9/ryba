@@ -28,6 +28,7 @@ module Ryba
       return var[0] if rnd < sum
     end
 
+    # этого не может быть
     raise
   end
 end
