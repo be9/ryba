@@ -10,8 +10,25 @@ module Ryba
     when String
       variants[rand(variants.length),1]
     when Range
-      variants.begin + rand(variants.end - variants.begin + 1)
+      if variants.exclude_end?
+        rand(variants.last - variants.first) + variants.first
+      else
+        rand((variants.last+1) - variants.first) + variants.first
+      end
     end
+  end
+
+  def self.weighted_pick(variants)
+    total_sum = variants.inject(0) { |sum, var| sum + var[1] }
+    rnd = rand(total_sum)
+
+    sum = 0
+    variants.each do |var|
+      sum += var[1]
+      return var[0] if rnd < sum
+    end
+
+    raise
   end
 end
 
