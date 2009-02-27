@@ -6,16 +6,16 @@ module Ryba
       end
 
       def city
-        Ryba.pick(Ryba::Data::AllCities).gsub('_', ' ')
+        Ryba.pick(Data::AllCities).gsub('_', ' ')
       end
 
       def full_city
-        cty = Ryba.pick(Ryba::Data::AllCities)
+        cty = Ryba.pick(Data::AllCities)
         h_cty = cty.gsub('_', ' ')
 
-        region = Ryba.pick(Ryba::Data::RegionByCities[cty])
+        region = Ryba.pick(Data::RegionByCities[cty])
 
-        if Ryba::Data::CitiesByRegion[region].first == cty
+        if Data::CitiesByRegion[region].first == cty
           "г. #{h_cty}"
         else
           "#{region}, г. #{h_cty}"
@@ -23,7 +23,7 @@ module Ryba
       end
 
       def street
-        Ryba.pick(Ryba::Data::StreetNames)
+        Ryba.pick(Data::StreetNames)
       end
 
       BuildingFormats = [
