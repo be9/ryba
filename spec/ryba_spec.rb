@@ -76,7 +76,6 @@ describe "Ryba" do
       20.times do
         n = Ryba::Company.name(:solidity => 3)
         n.should_not be_empty
-        puts n
       end
     end
   end
