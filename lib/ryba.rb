@@ -18,6 +18,10 @@ module Ryba
     end
   end
 
+  def self.pick_multi(variants, count)
+    variants.shuffle.take(count)
+  end
+
   def self.weighted_pick(variants)
     total_sum = variants.inject(0) { |sum, var| sum + var[1] }
     rnd = rand(total_sum)
@@ -33,7 +37,8 @@ module Ryba
   end
 end
 
-require File.join(File.dirname(__FILE__), 'ryba', 'data')
-require File.join(File.dirname(__FILE__), 'ryba', 'name')
-require File.join(File.dirname(__FILE__), 'ryba', 'phone_number')
-require File.join(File.dirname(__FILE__), 'ryba', 'address')
+require 'ryba/data'
+require 'ryba/name'
+require 'ryba/phone_number'
+require 'ryba/address'
+require 'ryba/company'

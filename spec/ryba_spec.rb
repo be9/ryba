@@ -63,4 +63,21 @@ describe "Ryba" do
       end
     end
   end
+
+  describe "Company" do
+    it "#name should work" do
+      20.times do
+        n = Ryba::Company.name
+        n.should_not be_empty
+      end
+    end
+
+    it "#name with options should work" do
+      20.times do
+        n = Ryba::Company.name(:solidity => 3)
+        n.should_not be_empty
+        puts n
+      end
+    end
+  end
 end
