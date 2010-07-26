@@ -4,14 +4,16 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "ryba"
-    s.summary = %Q{TODO}
+    s.summary = %Q{Russian faker}
     s.email = "olegdashevskii@gmail.com"
     s.homepage = "http://github.com/be9/ryba"
-    s.description = "Russian faker"
+    s.description = "Russian names and addresses generator"
     s.authors = ["oleg dashevskii"]
   end
+
+  Jeweler::GemcutterTasks.new
 rescue LoadError
-  puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
 require 'rake/rdoctask'
