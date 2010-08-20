@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Ryba
   module Data
     # http://taina.aib.ru/names/man/man-a.htm

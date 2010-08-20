@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/spec_helper'
+require 'spec_helper'
 
 describe "Ryba" do
   describe "Name" do
@@ -12,7 +12,7 @@ describe "Ryba" do
       @name.family_name(true)
       @name.full_name(true)
     end
-    
+
     it "should work for female" do
       @name.first_name(false)
       @name.middle_name(false)

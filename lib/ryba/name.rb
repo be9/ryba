@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Ryba
   class Name
     class <<self
@@ -10,7 +11,7 @@ module Ryba
       def first_name(male = nil)
         pick_with_gender(male, Data::MaleNames, Data::FemaleNames)
       end
-      
+
       def middle_name(male = nil)
         pick_with_gender(male, Data::MaleMiddleNames, Data::FemaleMiddleNames)
       end
