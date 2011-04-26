@@ -25,17 +25,16 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-require 'spec/rake/spectask'
-Spec::Rake::SpecTask.new(:spec) do |t|
-  t.libs << 'lib' << 'spec'
-  t.spec_files = FileList['spec/**/*_spec.rb']
-  t.spec_opts << '--colour'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:spec) do |t|
+  t.ruby_opts = '-I lib -I spec'
+  t.rspec_opts = '--colour'
 end
 
-Spec::Rake::SpecTask.new(:rcov) do |t|
-  t.libs << 'lib' << 'spec'
-  t.spec_files = FileList['spec/**/*_spec.rb']
+RSpec::Core::RakeTask.new(:rcov) do |t|
   t.rcov = true
+  t.rspec_opts = '--colour'
+  t.ruby_opts = '-I lib -I spec'
 end
 
 task :default => :spec

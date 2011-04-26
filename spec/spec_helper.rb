@@ -1,9 +1,8 @@
-require 'spec'
+require 'rspec'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'ryba'
 
-Spec::Runner.configure do |config|
-  
+RSpec.configure do |config|
 end
